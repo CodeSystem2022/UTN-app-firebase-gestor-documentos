@@ -1,26 +1,45 @@
-import { useContext } from "react"; // Importa la función "useContext" de la biblioteca React para acceder a un contexto.
-import { UserContext } from "../context/UserProvider"; // Importa el contexto "UserContext" desde el archivo "UserProvider.js".
-import { useNavigate } from "react-router-dom"; // Importa la función "useNavigate" de React Router para la navegación.
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserProvider";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const { user, setUser } = useContext(UserContext); // Utiliza "useContext" para acceder a "UserContext" y obtener el estado del usuario y la función para establecerlo.
-    const navigate = useNavigate(); // Utiliza "useNavigate" para acceder a la función de navegación.
+    const [email, setEmail] = useState(""); // Inicializa con una cadena vacía
+    const [password, setPassword] = useState(""); // Inicializa con una cadena vacía
 
-    const handleClickLogin = () => {
-        setUser(true); // Establece el estado del usuario como "true" (en línea).
-        navigate("/"); // Navega a la ruta "/" después de hacer clic en el botón de acceso.
+    const { loginUser } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await loginUser(email, password);
+            console.log("Usuario logueado");
+            navigate("/");
+        } catch (error) {
+            console.log(error.code);
+        }
     };
 
     return (
         <>
-            {/* Renderiza un título que dice "Login" */}
-            <h1>Login</h1> 
-            {/* Renderiza un mensaje que depende del estado del usuario, mostrando "En línea" o "Offline" */}
-            <h2>{user ? "En línea" : "Offline"}</h2> 
-            {/* Renderiza un botón que, al hacer clic, llama a la función "handleClickLogin" para iniciar sesión. */}
-            <button onClick={handleClickLogin}>Acceder</button> 
+            <h1>Login</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    placeholder="Ingrese su email"
+                    value={email} // Vincula el valor al estado 'email'
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    type="password"
+                    placeholder="Ingrese su contraseña"
+                    value={password} // Vincula el valor al estado 'password'
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit">Iniciar sesión</button>
+            </form>
         </>
     );
 };
 
-export default Login; 
+export default Login;
