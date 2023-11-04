@@ -1,60 +1,48 @@
-import { useContext, useState } from "react"; // Importa React y los hooks useContext y useState desde la biblioteca "react".
-import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate desde "react-router-dom".
-import { UserContext } from "../context/UserProvider"; // Importa el contexto UserContext desde un archivo llamado "UserProvider.js" en un directorio "context".
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserProvider";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-    // Define componentes de estado para email y password y sus funciones para actualizarlos.
-    const [email, setEmail] = useState("prueba@mail.com");
-    const [password, setPassword] = useState("123456");
+    const [email, setEmail] = useState(""); // con esto creamos el estado del email
+    const [password, setPassword] = useState(""); // con esto creamos el estado del password
 
-    const navegate = useNavigate(); // Obtiene la función de navegación desde react-router-dom.
+    const navegate = useNavigate(); // con esto creamos la navegacion
 
-    // Obtiene la función "registerUser" desde el contexto UserContext utilizando el hook useContext.
-    const { registerUser } = useContext(UserContext);
+    const {registerUser} = useContext(UserContext); // con esto creamos el contexto del usuario
 
-    // Maneja el envío del formulario cuando el usuario presiona el botón "Register".
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Previene el comportamiento predeterminado del formulario.
-
+    const handleSudmit = async(e) => {
+        e.preventDefault();
         console.log(email, password);
-
         try {
-            // Llama a la función "registerUser" para registrar al usuario con el email y contraseña proporcionados.
-            await registerUser(email, password);
-
-            console.log("Usuario creado");
-            navegate("/"); // Redirige al usuario a la página de inicio (ruta "/") después de registrar exitosamente.
-
+            await registerUser(email, password); // con esto registramos al usuario
+            console.log("Usuario registrado");
+            navegate("/");
         } catch (error) {
-            console.log(error.code); // En caso de error, muestra el código del error en la consola.
+            console.log(error.code);
         }
-    };
+    } // con esto manejamos el submit del formulario que sirve para registrar al usuario
 
-    return (
-        <>
-        <h1>Register</h1>
-        <form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                placeholder="Ingrese email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Ingrese Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Register</button>
-        </form>
+  return (
+    <>
+     <h1>Register</h1>
+     <form onSubmit={handleSudmit}>
+        <input type="email"
+         placeholder="Ingrese su email" 
+         value={email}
+         onChange={(e) => setEmail(e.target.value)}
+         />
+         <input type="password"
+         placeholder="Ingrese su contraseña" 
+         value={password}
+         onChange={(e) => setPassword(e.target.value)}
+         />
+            <button type="submit">Registrarse</button>
+     </form>
     </>
-
-    );
+    
+  ) // con esto creamos el formulario para registrar al usuario
 }
 
-export default Register;
+export default Register
 
-
-
-
+// este componente sirve para registrar al usuario
