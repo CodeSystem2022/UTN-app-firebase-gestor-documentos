@@ -14,6 +14,10 @@ https://firebase.google.com
 Firebase Documentacion
 https://firebase.google.com/docs/web/setup?authuser=0&hl=es
 
+Reac Hook Form
+https://react-hook-form.com/get-started
+
+
 
 ## Crear proyecto
 
@@ -129,3 +133,11 @@ BREAKING CHANGE: None
 
 
 # Parte 3
+
+Reac Hook Form
+
+1. npm install react-hook-form
+
+2. agregar contenido en Register
+
+3. 
