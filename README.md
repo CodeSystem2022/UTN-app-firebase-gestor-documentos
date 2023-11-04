@@ -1,4 +1,4 @@
-# UTN App - Gestor de Documentos con Firebase
+# UTN App - APP con Firebase + React + Vite + Tailwins
 
 [![UTN.png](https://i.postimg.cc/C5HkbLwp/UTN.png)](https://postimg.cc/0Kjzsv6V)
 
@@ -7,18 +7,5 @@ Este proyecto es una aplicación web basada en Node.js con una interfaz de usuar
 ## Características Principales
 
 - Registro y autenticación de usuarios por correo electrónico.
-- Carga de documentos en formato PDF o JPG.
-- Gestión de documentos requeridos para la admisión.
-- Tabla de aspirantes ordenada alfabéticamente.
-- Control de estado de documentación y aprobación por parte de super usuarios.
+- Carga de links
 - Seguridad y privacidad de datos garantizada.
-
-## Instalación
-
-Sigue estos pasos para configurar y ejecutar el proyecto localmente:
-
-1. Clona este repositorio en tu máquina local.
-2. Instala las dependencias del proyecto con el siguiente comando:
-
-   ```bash
-   npm install
