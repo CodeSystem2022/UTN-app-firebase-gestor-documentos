@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom"; // Importa los componentes necesarios de React Router para definir rutas en la aplicación.
 
-function App() {
-  const [count, setCount] = useState(0)
+import Login from "./routes/Login"; // Importa el componente "Login" desde el archivo "Login.js".
+import Home from "./routes/Home"; // Importa el componente "Home" desde el archivo "Home.js".
+import Navbar from "./components/Navbar"; // Importa el componente "Navbar" desde el archivo "Navbar.js".
+import RequireAuth from "./components/RequireAuth"; // Importa el componente "RequireAuth" desde el archivo "RequireAuth.js".
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => {
+    return (
+        <>
+            <Navbar /> {/* Renderiza el componente "Navbar", que probablemente representa la barra de navegación de la aplicación. */}
+            <h1>APP</h1>{/* Renderiza un título o encabezado en la página.*/} 
+            <Routes> {/*Define un conjunto de rutas utilizando el componente "Routes" de React Router.*/}
 
-export default App
+                {/* Definición de una ruta */}
+                <Route
+                    path="/"
+                    element={
+                        <RequireAuth> {/*Envuelve el componente "Home" con "RequireAuth". Puede utilizarse para requerir autenticación antes de mostrar la página "Home".*/}
+                            <Home /> {/*Renderiza el componente "Home" cuando la ruta coincide con "/"*/}
+                        </RequireAuth>
+                    }
+                />
+
+                {/* Definición de otra ruta */}
+                <Route path="/login" element={<Login />} /> {/* Define la ruta "/login" y renderiza el componente "Login" cuando la ruta coincide.*/}
+
+            </Routes>
+        </>
+    );
+};
+
+export default App; 
