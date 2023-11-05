@@ -9,6 +9,7 @@ import { formValidates } from "../utils/formValidates";
 
 // componentes
 import FormError from "../components/FormError";
+import FormInput from "../components/FormInput";
 
 
 const Register = () => {
@@ -45,44 +46,43 @@ const Register = () => {
 
     return (
         <>
-            <h1>Register</h1>
+            <h1>User Register</h1>
             <FormError error={errors.firebase} />
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input
+                <FormInput
                     type="email"
                     placeholder="Ingrese email"
-                    {...register("email", { //objeto que recibe el elemento 
-                        required, // elemento requerido
-
-                        pattern: patternEmail, // validación de email
+                    {...register("email", {
+                        required,
+                        pattern: patternEmail,
                     })}
-                />
-                <FormError error={errors.email} />
-                <input
+                >
+                    <FormError error={errors.email} />
+                </FormInput>
+
+                <FormInput
                     type="password"
-                    placeholder="Ingrese su Contraseña"
+                    placeholder="Ingrese Password"
                     {...register("password", {
                         minLength,
-                        validate: validatetrim, // validación de espacios en blanco                        
+                        validate: validatetrim,
                     })}
+                >
+                    <FormError error={errors.password} />
+                </FormInput>
 
-                />
-                <FormError error={errors.password} />
-
-                <input
+                <FormInput
                     type="password"
-                    placeholder="Ingrese su Contraseña nuevamente"
+                    placeholder="Ingrese Password"
                     {...register("repassword", {
-                        validate: validateEquals(getValues), // validación de contraseña igual
+                        validate: validateEquals(getValues),
                     })}
-
-                />
-                <FormError error={errors.repassword} />
-
+                >
+                    <FormError error={errors.repassword} />
+                </FormInput>
                 <button type="submit">Register</button>
             </form>
         </>
-
     );
 };
 
