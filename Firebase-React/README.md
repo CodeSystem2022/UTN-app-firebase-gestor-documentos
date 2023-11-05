@@ -52,13 +52,9 @@ npm i react-router-dom@6
 
 npm run dev
 
-### 1 commit (rama main)
+### commit (rama main)
 
 feat: initial project setup
-
-This commit sets up the initial project structure and environment.
-
-BREAKING CHANGE: None
 
 
 6. limpieza
@@ -85,15 +81,9 @@ RequiereAuth.jsx
 10. carpeta context
 UserProvider.jsx
 
-### 2 Commit: (rama Parte-1)
+### Commit: (rama Parte-1)
 feat(parte-1): add project structure and routes
 
-In this commit, the following changes were made:
-- Added three new folders: 'components', 'context', and 'routes'.
-- Created necessary files and added content within these folders.
-- Removed 'app.css'.
-
-BREAKING CHANGE: None
 
 # 2 Parte
 
@@ -117,19 +107,9 @@ creamos archivo src/"firebase.js" y agregamos las credenciales
 
 7. Rutas Protegidas
 
-### 3 Commit (rama Parte-2)
+### Commit (rama Parte-2)
 feat(Parte-2): Firebase setup, user authentication, and protected routes
 
-In this commit, the following changes were made:
-- Installed Firebase modules using 'npm install firebase'.
-- Created a 'firebase.js' file in the 'src' directory and added Firebase credentials.
-- Implemented user registration functionality.
-- Implemented user login functionality.
-- Implemented user logout functionality.
-- Added functionality to get the currently logged-in user.
-- Created protected routes.
-
-BREAKING CHANGE: None
 
 
 # Parte 3
@@ -140,4 +120,11 @@ Reac Hook Form
 
 2. agregar contenido en Register
 
-3. 
+(validaciones, errores firebase (backend))
+
+### commit  (rama parte-3)
+
+feat(Parte-3): Implement React Hook Form in Register with validations and Firebase errors
+
+
+
