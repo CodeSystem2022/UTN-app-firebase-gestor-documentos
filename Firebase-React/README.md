@@ -132,5 +132,17 @@ feat(Parte-3): Implement React Hook Form in Register with validations and Fireba
 
 Renfactorización Register y Login
 
+1. creamos utils\erroresFirebase.js
+2. refactorizamos errores del register
+
+3. creamos utils/formValidates.js
+4. refactorizamos las validaciones del register
+
+5. creamos el arhcivo components\FormError.jsx
+6. refactorizamos los errores de firebase de Register
+
+7. refactorizamos el login
+
+
 
 

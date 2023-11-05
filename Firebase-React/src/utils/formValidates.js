@@ -1,32 +1,30 @@
-export const formValidates = (getValues) => {
+export const formValidates = () => {
     return {
-        required: // elemento requerido
-        {
-            value: true, // valor true
-            menssage: "Este campo es obligatorio" // mensaje de error
+        required: {
+            value: true, // Indica que el campo es requerido.
+            message: "Este campo es obligatorio", // Mensaje de error si el campo está vacío.
         },
-        patternEmail: {// elemento patron
-            value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // valor de la expresion regular
-            menssage: "El email ingresado no es valido" // mensaje de error
+        patternEmail: {
+            value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // Expresión regular para validar un correo electrónico.
+            message: "El email ingresado no es válido", // Mensaje de error si el correo electrónico no coincide con el patrón.
         },
         minLength: {
-            value: 6,
-            menssage: "Debe tener al menos 6 caracteres"
+            value: 6, // Longitud mínima requerida.
+            message: "Debe tener al menos 6 caracteres", // Mensaje de error si la longitud es menor que 6 caracteres.
         },
-        validatetrim: {
+        validateTrim: {
             trim: (v) => {
-                if (!v.trim()) { // trim() elimina los espacios en blanco al inicio y al final de un string
-                    return "No debe contener espacios en blanco";
+                if (!v.trim()) {
+                    return "No debe contener espacios en blanco"; // Mensaje de error si el campo contiene solo espacios en blanco.
                 }
-                return true;
+                return true; // La validación es exitosa.
             },
-
         },
-        validateEquals(value) {
+        validateEquals(Value) {
             return {
-                equals: (v) => v === value || "No coinciden las contraseñas",
+                equals: (v) =>
+                v === Value || "No coinciden las contraseñas", // Compara dos valores y devuelve un mensaje de error si no coinciden.
             };
         },
     };
 };
-
