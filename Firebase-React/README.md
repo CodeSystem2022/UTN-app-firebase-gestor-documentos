@@ -211,11 +211,13 @@ npm install autoprefixer
 Modificamos y creamos
 
 . App.jsx
-. components/AccessContainer.jsx
+
 . components/Title.jsx
 . components/FormAlert.jsx
 . components/FormInput.jsxc
 . components/FormInput.jsx
+. routes/Inicio.jsx
+. asset/img
 . Register.jsx
 . Login.jsx
 . Navbar.jsx

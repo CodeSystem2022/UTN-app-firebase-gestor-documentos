@@ -1,22 +1,19 @@
-import { useContext } from "react"; // Importa la función "useContext" de la biblioteca React para acceder a un contexto.
-import { UserContext } from "../../context/UserProvider"; // Importa el contexto "UserContext" desde el archivo "UserProvider.js".
-import { Navigate } from "react-router-dom"; // Importa el componente "Navigate" de React Router para la navegación.
+import { useContext } from "react";
+import { UserContext } from "../../context/UserProvider";
+import { Navigate, Outlet } from "react-router-dom";
 
-const RequireAuth = ({ Outlet }) => {
-  const { user } = useContext(UserContext); // Utiliza "useContext" para acceder al contexto "UserContext" y obtener el estado del usuario.
+const LayoutRequireAuth = () => {
+    const { user } = useContext(UserContext);
 
-  if (!user) {
-    // Verifica si el usuario no está autenticado.
-    return <Navigate to="/login" />; // Si el usuario no está autenticado, redirige a la página de inicio de sesión ("/login") utilizando el componente "Navigate".
-  }
+    if (!user) {
+        return <Navigate to="/login" />;
+    }
 
-  return (
-    <div className="container mx-auto">
-        <Outlet />
-    </div>
-  );
+    return (
+        <div className="container mx-auto px-4">
+            <Outlet />
+        </div>
+    );
 };
 
-
-
-export default RequireAuth; // Exporta el componente "RequireAuth" como el componente principal del módulo.
+export default LayoutRequireAuth;
