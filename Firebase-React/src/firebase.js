@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth } from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore/lite'
 
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBpw65qIG-7rgqlLTQfqM8iSAOZkYwEq9c",
   authDomain: "fir-reac1.firebaseapp.com",
@@ -11,8 +12,10 @@ const firebaseConfig = {
   appId: "1:307847387312:web:b80c855bec4324ca5d8375"
 };
 
-
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app); // getAuth nos permite obtener el servicio de autenticación de Firebase (mediante el método getAuth)
+const auth = getAuth(app); // getAuth nos permite obtener el servicio de autenticación de Firebase (mediante el método getAuth
+const db = getFirestore(app); // getFirestore nos permite obtener el servicio de firestore de Firebase (mediante el método getFirestore
 
-export { auth };
+
+export { auth, db }

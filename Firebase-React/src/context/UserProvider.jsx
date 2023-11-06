@@ -1,5 +1,3 @@
-import PropTypes from "prop-types"; // Esta importacion es para validar las propiedades
-
 import { auth } from "../firebase"; // Importa la instancia de autenticación de Firebase.
 import {
     createUserWithEmailAndPassword,
@@ -44,11 +42,5 @@ const UserProvider = ({ children }) => {
         </UserContext.Provider>
     );
 };
-
-// Agrega la validación de props
-UserProvider.propTypes = {
-    children: PropTypes.node.isRequired // Valida que se pase 'children' como prop
-  };
-  
 
 export default UserProvider; 

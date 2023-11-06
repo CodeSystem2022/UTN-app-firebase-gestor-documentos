@@ -6,6 +6,8 @@ import App from "./App"; // Importa el componente principal de la aplicación de
 import { BrowserRouter } from "react-router-dom"; // Importa el componente "BrowserRouter" de React Router, que permite la navegación en la aplicación.
 import UserProvider from "./context/UserProvider"; // Importa un componente personalizado "UserProvider" de un contexto definido en el proyecto.
 
+import "flowbite";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
         <UserProvider>

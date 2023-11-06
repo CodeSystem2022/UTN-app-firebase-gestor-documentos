@@ -30,6 +30,9 @@ https://tailwindcomponents.com/cheatsheet/
 Html a jsx
 https://transform.tools/html-to-jsx
 
+NanoID
+https://www.npmjs.com/package/nanoid
+
 # 1 Parte
 
 ## Crear proyecto
@@ -227,18 +230,14 @@ Modificamos y creamos
 # Parte 6
 
 ##Firestore
+1. configuracion desde firebase
+2. agregar firestore en main.jsx
+3. npm install nanoid  
+3. Agregar contenido
 
-. Add Doc
-. Delete Doc
-. Update Doc
-
-. Components
-. Error interpolación colores
-. Hook Form
-. Separar botones
-. Card
-. handleClickCopy
-. Redirect
+. Home
+. src\hooks\useFirestore.js
+. src\components\layouts\LayoutRedirect.jsx
 
 # Parte 7
 
@@ -246,4 +245,5 @@ Modificamos y creamos
 
 . Reglas de seguridad
 . Deploy
-
+npm run build
+npm run preview
