@@ -211,7 +211,6 @@ npm install autoprefixer
 Modificamos y creamos
 
 . App.jsx
-
 . components/Title.jsx
 . components/FormAlert.jsx
 . components/FormInput.jsxc
