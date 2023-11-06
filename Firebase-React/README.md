@@ -1,5 +1,8 @@
 # Links
 
+App 
+https://fir-reac1.firebaseapp.com
+
 Vite
 https://vitejs.dev
 
@@ -243,7 +246,19 @@ Modificamos y creamos
 
 ## Seguridad y deploy
 
-. Reglas de seguridad
-. Deploy
-npm run build
-npm run preview
+### Reglas de seguridad
+
+### Deploy
+. npm run build
+
+. npm run preview
+
+. npm install -g firebase-tools
+
+. firebase login
+
+. firebase init
+
+. firebase deploy
+
+Abrir consola Hosting seleccionar 2º link
